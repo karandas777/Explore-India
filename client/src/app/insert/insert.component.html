@@ -1,0 +1,25 @@
+<div class="bg-dark sticky-top text-light w-100 p-2">
+    <span class="h2">Add Category</span> 
+</div>
+
+
+
+<div class="container pt-3 pb-5">
+    <p>Image</p>
+    <p class="p-3 rounded border">
+        <input type="file" class="w-50" ng2FileSelect [uploader]="uploader" (change)="getImageName($event)">
+        <!-- <button class="btn btn-danger" (click)="upload()">Upload</button> -->
+    </p><br>
+    <input class="form-control" disabled [(ngModel)]="formdata.image"><br>
+    <p>Name</p>
+    <input class="form-control" [(ngModel)]="formdata.name"><br>
+    <p>Page Url</p>
+    <input class="form-control" [(ngModel)]="formdata.pageurl"><br>
+    <p>Meta Title</p>
+    <input class="form-control" [(ngModel)]="formdata.meta_title"><br>
+    <p>Meta Description</p>
+    <input class="form-control" [(ngModel)]="formdata.meta_desc"><br>
+    <button class="btn btn-success" (click)="insert()">Add Category</button>
+    <br><br>
+    <div class="alert-danger form-control w-100" *ngIf="invalid===true">** Please fill all details **</div>
+</div>

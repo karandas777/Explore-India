@@ -1,0 +1,17 @@
+.topnav{
+    display: none;
+}
+
+@media screen and (max-width:600px){
+    .topnav{
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        z-index: 1;
+    }
+    .sidenav{
+        display: none;
+    }
+    
+}

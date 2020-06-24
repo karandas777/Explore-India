@@ -1,0 +1,24 @@
+<div class="container-fluid p-0 m-0">
+
+    <div class="row p-0 m-0">
+        <div class="col-md-6 text-center p-0 reshide holder">
+                <div class="h3 logox bg-light text-dark px-3 py-2 rounded-pill">
+                        <i class="fa fa-map-marker text-danger"></i> Explore India
+                </div>
+                <img src="../../assets/bg1.jpg" class="w-100 vh-100">
+        </div>
+
+        <div class="col-md-6 vh-100 bgcol text-light pt-5 pl-5">
+                <p class="h1 mb-5 mt-5">Login <i class="fa fa-sign-in"></i></p>
+    
+                <span class="h6">Username</span><br>
+                <input type="text" class="form-control w-50 mb-3 mt-3" [(ngModel)]="form.username"><br>
+                <span class="h6">Password</span><br>
+                <input type="password" class="form-control w-50 mb-3 mt-3" [(ngModel)]="form.password"><br>
+                <button class="btn btn-light mb-3" (click)="login()">Login</button><br>
+                <div class="alert alert-warning w-50" *ngIf="invalid===true">{{alert}}</div>
+                <a class="text-light" routerLink="/signup">New user? signup here!</a>
+        </div>
+    </div>
+    
+</div>

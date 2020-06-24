@@ -1,0 +1,25 @@
+.holder{
+    background-image: url("../../assets/1551629577_kerala_tour_feature.png.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+}
+
+.banner{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: table;
+}
+
+.btext{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.card-img-top{
+    height: 200px;
+}
+
+.card-text{
+    height: 150px;
+}

@@ -1,0 +1,50 @@
+
+<div class="sidenav">
+
+<div class="h4 mt-5 mb-5">
+        <i class="fa fa-map-marker text-danger"></i> Explore India
+</div>
+
+<div>
+        <button class="btn btn-outline-dark rounded-pill w-100 mt-3 mb-3" type="button" data-toggle="collapse" data-target="#collapseExample">
+                Category <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="collapse mt-3" id="collapseExample">
+                <button class="btn btn-light w-100 mb-3" routerLink="/home/view-category"><i class="fa fa-bars text-danger"></i> View Category</button>
+                <button class="btn btn-light w-100 mb-3" routerLink="/home/insert-category"><i class="fa fa-plus-circle text-danger"></i> Add Category</button>
+        </div>
+</div>
+
+<div>
+        <button class="btn btn-outline-dark rounded-pill w-100 mt-3 mb-3" type="button" data-toggle="collapse" data-target="#collapseExample2">
+                Post <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="collapse mt-3" id="collapseExample2">
+                <button class="btn btn-light w-100 mb-3" routerLink="/home/view-post"><i class="fa fa-bars text-danger"></i> View Post</button>
+                <button class="btn btn-light w-100 mb-3" routerLink="/home/insert-post"><i class="fa fa-plus-circle text-danger"></i> Add Post</button> 
+        </div>
+</div>
+
+
+<div class="mt-3 mb-3 text-center">
+        <button class="btn btn-danger rounded-pill mb-3 w-100" (click)="logout()">{{username}} <i class="fa fa-sign-out"></i></button>
+</div>
+
+</div>
+
+
+<div class="topnav">
+        <div>
+                <button class="btn btn-dark rounded-pill m-3" type="button" data-toggle="collapse" data-target="#collapseExample3">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                </button><br>
+                <div class="collapse p-3 m-3 rounded bg-dark" id="collapseExample3">
+                        <span class="btn btn-light rounded-pill m-3" data-toggle="collapse" data-target="#collapseExample3"><i class="fa fa-map-marker text-danger"></i> Explore India</span>
+                        <button class="btn btn-danger rounded m-3" (click)="logout()">{{username}} <i class="fa fa-sign-out"></i></button><br>
+                        <button class="btn btn-light rounded m-3" data-toggle="collapse" data-target="#collapseExample3" routerLink="/home/view-category">Category</button>
+                        <button class="btn btn-light rounded m-3" data-toggle="collapse" data-target="#collapseExample3" routerLink="/home/view-post">Post</button>
+                </div>
+
+        </div>
+</div>
+

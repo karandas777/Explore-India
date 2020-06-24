@@ -1,0 +1,31 @@
+
+<div class="container-fluid mt-3 mb-5 pt-5 pb-5 text-center">
+        <div class="container">
+            <p class="h3"><i class="fa fa-map-marker text-danger"></i> Places to visit in {{city | titlecase}}</p>
+            <p class="text-right mt-3">{{datalength}} Articles</p>
+
+            <div class="row pt-5">
+                <div class="col-md-4 mt-3 mb-3" *ngFor="let x of postlist | paginate: { itemsPerPage: 6, currentPage: p }">
+                    <div class="card">
+                        <img class="card-img-top" src={{imgurl}}{{x.post_image}}>
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">{{x.title}}</h5>
+                            <p class="text-left">
+                                <small><i class="fa fa-location-arrow"></i><span class="text-danger"> {{x.cat_name}}</span></small>
+                            </p>
+                            <p class="card-text text-left"><i class="fa fa-map-marker text-danger"></i> {{x.meta_desc}}</p>
+                            <button class="btn btn-outline-danger rounded-pill" [routerLink]="['/article-details',x.pageurl]"  >Explore {{x.title}}</button>
+                        </div>
+                        <div class="card-footer text-muted text-right">
+                            <i class="fa fa-clock-o"></i> {{x.updatedAt | date }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 mb-3">
+                <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+            </div>
+
+        </div>
+    </div>

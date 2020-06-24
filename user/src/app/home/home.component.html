@@ -1,0 +1,57 @@
+<div class="container-fluid p-0 vh-100 holder">
+  <div class="w-100 vh-100 banner">
+    <div class="btext text-center">
+      <p class="h2">
+        <i class="fa fa-map-marker text-danger"></i> Explore India
+      </p>
+      <p class="h6 mt-4">"It feels good to be lost in the right direction."</p>
+      <button class="btn btn-danger rounded-pill mt-3" onclick="funScroll()">
+        Start <i class="fa fa-arrow-circle-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-5 mb-5 pt-5 pb-5 text-center" id="visit">
+  <div class="container">
+    <p class="h3">
+      <i class="fa fa-map-marker text-danger"></i> Cities to visit
+    </p>
+
+    <div class="row pt-5">
+      <div
+        class="col-md-4 mt-3 mb-3"
+        *ngFor="
+          let x of catlist | paginate: { itemsPerPage: 6, currentPage: p }
+        "
+      >
+        <div class="card">
+          <img class="card-img-top" src="{{ imgurl }}{{ x.image }}" />
+          <div class="card-body">
+            <h5 class="card-title text-danger">{{ x.name }}</h5>
+            <p class="card-text text-left">
+              <i class="fa fa-map-marker text-danger"></i> {{ x.meta_desc }}
+            </p>
+            <button
+              class="btn btn-outline-danger rounded-pill"
+              [routerLink]="['/articles', x.pageurl | titlecase]"
+            >
+              Explore {{ x.name }}
+            </button>
+          </div>
+          <div class="card-footer text-muted text-right">
+            <i class="fa fa-clock-o"></i> {{ x.updatedAt | date }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 mb-3">
+      <pagination-controls
+        (pageChange)="p = $event"
+        class="float-right"
+        onclick="funScroll()"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>
